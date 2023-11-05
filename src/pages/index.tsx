@@ -24,6 +24,7 @@ export type DataTypes = {
       lang: string
       siteUrl: string
       themeColor: string
+      charset: string
     }
   }
   file: {
@@ -74,6 +75,8 @@ export const Head = (props: HeadProps<DataTypes>) => (
   <>
     <html lang={props.data.site.siteMetadata.lang} />
     <title>{props.data.site.siteMetadata.title}</title>
+    <meta charSet={props.data.site.siteMetadata.charset} />
+    <meta name='viewport' content='width=device-width,initial-scale=1' />
     <meta name='description' content={props.data.site.siteMetadata.description} />
     <meta property='og:title' content={props.data.site.siteMetadata.title} />
     <meta property='og:description' content={props.data.site.siteMetadata.description} />
@@ -83,6 +86,7 @@ export const Head = (props: HeadProps<DataTypes>) => (
     <meta property='og:site_name' content={props.data.site.siteMetadata.title} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name='twitter:site' content='@IKEDA__JS' />
+    <meta name='robots' content='noindex,nofollow' />
   </>
 )
 export const query = graphql`
@@ -103,6 +107,7 @@ export const query = graphql`
         lang
         siteUrl
         themeColor
+        charset
       }
     }
     file(relativePath: {eq: "1f4cea5b9ec54c7f9f83501b9b139fe5.png"}) {
