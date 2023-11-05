@@ -2,8 +2,12 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Gatsby-Hello-World-Typescript`,
-    siteUrl: `https://www.yourdomain.tld`
+    lang: `ja`,
+    title: `Smooth Scroll`,
+    description: `スムーズにスクロールし画像にカーソルがホバーするとその画像の説明文がフワっと浮き上がってくるアニメーションのデモサイト`,
+    siteUrl: `https://main--bucolic-zabaione-6db8d0.netlify.app/`,
+    themeColor: `#0F172A`,
+    ogpImage: ``,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

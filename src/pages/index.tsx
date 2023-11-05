@@ -21,6 +21,16 @@ export type DataTypes = {
     siteMetadata: {
       title: string
       description: string
+      lang: string
+      siteUrl: string
+      themeColor: string
+    }
+  }
+  file: {
+    childImageSharp: {
+      fixed: {
+        src: string
+      }
     }
   }
 };
@@ -62,13 +72,14 @@ export default function Home({ data }: PageProps<DataTypes>) {
 };
 export const Head = (props: HeadProps<DataTypes>) => (
   <>
-    <html lang='ja' />
+    <html lang={props.data.site.siteMetadata.lang} />
     <title>{props.data.site.siteMetadata.title}</title>
     <meta name='description' content={props.data.site.siteMetadata.description} />
     <meta property='og:title' content={props.data.site.siteMetadata.title} />
     <meta property='og:description' content={props.data.site.siteMetadata.description} />
-    <meta property='og:url' content='https://gentle-kashata-9690af.netlify.app' />
-    <meta property='og:type' content='demo' />
+    <meta property='og:url' content={props.data.site.siteMetadata.siteUrl} />
+    <meta property='og:image' content={`${props.data.site.siteMetadata.siteUrl}/${props.data.file.childImageSharp.fixed.src}`} />
+    <meta property='og:type' content='product' />
     <meta property='og:site_name' content={props.data.site.siteMetadata.title} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name='twitter:site' content='@IKEDA__JS' />
@@ -76,7 +87,7 @@ export const Head = (props: HeadProps<DataTypes>) => (
 )
 export const query = graphql`
   query MyQuery {
-    allFile {
+    allFile (filter: {extension: {eq: "jpg"}}) {
       edges {
         node {
           childImageSharp {
@@ -89,6 +100,16 @@ export const query = graphql`
       siteMetadata {
         title
         description
+        lang
+        siteUrl
+        themeColor
+      }
+    }
+    file(relativePath: {eq: "1f4cea5b9ec54c7f9f83501b9b139fe5.png"}) {
+      childImageSharp {
+        fixed {
+          src
+        }
       }
     }
   }
