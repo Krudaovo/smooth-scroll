@@ -5,7 +5,7 @@ const config: GatsbyConfig = {
     lang: `ja`,
     title: `Smooth Scroll`,
     description: `スムーズにスクロールし画像にカーソルがホバーするとその画像の説明文がフワっと浮き上がってくるアニメーションのデモサイト`,
-    siteUrl: `https://main--bucolic-zabaione-6db8d0.netlify.app/`,
+    siteUrl: `https://smooothscroll.netlify.app`,
     themeColor: `#0F172A`,
     charset: `utf-8`
   },
