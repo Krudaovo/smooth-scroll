@@ -84,7 +84,7 @@ export const Head = (props: HeadProps<DataTypes>) => (
     <meta property='og:image' content={`${props.data.site.siteMetadata.siteUrl}/${props.data.file.childImageSharp.fixed.src}`} />
     <meta property='og:type' content='product' />
     <meta property='og:site_name' content={props.data.site.siteMetadata.title} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name='twitter:card' content='summary' />
     <meta name='twitter:site' content='@IKEDA__JS' />
     <meta name='robots' content='noindex,nofollow' />
   </>
