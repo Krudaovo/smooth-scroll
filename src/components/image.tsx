@@ -11,7 +11,7 @@ type ImageTypes = {
 export default function Image({ image, i, dataSpeed, imageDescription }: ImageTypes) {
   return (
     <>
-      <div data-speed={dataSpeed} className={`image-wrapper${i} image-wrapper overflow-hidden cursor-default relative rounded-sm w-3/4 h-3/4 md:w-2/3 md:h-2/3`}>
+      <div data-speed={dataSpeed} className={`image-wrapper${i} image-wrapper overflow-hidden cursor-default relative rounded-sm w-3/4 h-3/4 md:w-2/3 md:h-2/3 xl:w-1/2 xl:h-1/2`}>
         <GatsbyImage
           image={image}
           className={`w-full h-[150%] image${i} image`}
