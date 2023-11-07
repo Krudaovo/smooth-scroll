@@ -60,5 +60,17 @@ export function hoveredImage(targetImage: string, targetDescription: string) {
   description.addEventListener('mouseenter', () => {
     hoveredImg.play();
     hoverDescription.play();
-  })
+  });
+  image.addEventListener('touchstart', () => {
+    hoverDescription.play();
+    hoveredImg.play();
+  });
+  image.addEventListener('touchend', () => {
+    hoverDescription.reverse();
+    hoveredImg.reverse();
+  });
+  description.addEventListener('touchend', () => {
+    hoverDescription.play();
+    hoveredImg.play();
+  });
 }
